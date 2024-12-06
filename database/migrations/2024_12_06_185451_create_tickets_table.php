@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\Order::class);
-            $table->foreignIdFor(\App\Models\ShowTime::class);
             $table->foreignIdFor(\App\Models\Seat::class);
         });
     }

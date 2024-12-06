@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('seats', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+
+            $table->foreignIdFor(\App\Models\ShowTime::class)->index();
+            $table->unsignedInteger('row');
+            $table->unsignedInteger('column');
+            $table->unsignedInteger('number');
+            $table->string('type')->comment("'reserved', 'corridor', 'for_sale'");
+
+
         });
     }
 
