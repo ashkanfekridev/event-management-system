@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('location');
+            $table->string('image');
             $table->foreignIdFor(\App\Models\Artist::class);
             $table->foreignIdFor(\App\Models\City::class);
             $table->timestamps();
